@@ -1,0 +1,6 @@
+{
+    "port": 3000,
+    "mongoUri": "mongodb+srv://terrarAdmin:qweqweqwe@cluster0-u08w1.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "example",
+    "X": 1280
+}

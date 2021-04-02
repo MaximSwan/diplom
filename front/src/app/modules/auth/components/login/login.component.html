@@ -1,0 +1,26 @@
+<div class="main-block">
+  <form class="info" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <span class="info__header">Авторизация</span>
+    <input
+      formControlName="email"
+      type="text"
+      placeholder="email"
+      class="form-control"
+    />
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="password"
+      class="form-control"
+    />
+    <button
+      [disabled]="!loginForm.valid"
+      type="submit"
+      class="btn btn-outline-primary"
+    >
+      Войти
+    </button>
+    <span class="error" *ngIf="errorMsg"> {{errorMsg}} </span>
+    <span class="success">{{successMsg}}</span>
+  </form>
+</div>

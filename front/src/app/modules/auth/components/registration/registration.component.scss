@@ -1,0 +1,19 @@
+.main-block {
+  display: flex;
+  justify-content: center;
+  .info {
+    width: 600px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .form-control {
+    margin: 20px;
+  }
+}
+
+.error {
+  color: red;
+}

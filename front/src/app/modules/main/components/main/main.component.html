@@ -1,0 +1,60 @@
+<div class="main-block">
+  <div class="info">
+    <span class="info__header">Доброго пожаловать в My blog</span>
+
+    <button
+      routerLink="/main/create"
+      type="button"
+      class="btn btn-secondary add"
+    >
+      Добавить свой пост
+    </button>
+    <span class="info__words">Последние посты</span>
+
+    <div *ngFor="let item of arts">
+      <div
+        class="card"
+        [ngClass]="{ 'my-block': currentId === item.owner }"
+        style="width: 18rem"
+      >
+        <img
+          *ngIf="item.mainImage"
+          [src]="item.mainImage"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <div
+            routerLink="{{ '/main/profile/' + item.owner }}"
+            class="user-info"
+          >
+            <img
+              class="avatar"
+              src="../../../../../assets/unnamed.jpg"
+              alt=""
+            />
+            <h5 class="card-title">{{ item.email }}</h5>
+          </div>
+          <p class="card-text">
+            {{ item.title }}
+          </p>
+          <p class="card-text">
+            {{ item.descr }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <nav style="margin-top: 10px" aria-label="Page navigation example">
+      <ul class="pagination">
+        <li *ngFor="let item of pageCount; let i = index" class="page-item">
+          <a (click)="getDataForPage(i)" class="page-link"> {{ i + 1 }} </a>
+        </li>
+
+        <!-- <li class="page-item"><a class="page-link" href="#"><-</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">-></a></li> -->
+      </ul>
+    </nav>
+  </div>
+</div>
