@@ -1,6 +1,10 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="createForm">
   <div class="main-block">
-    <span class="input-data">Введите данные</span>
+    <span
+      style="margin-bottom: 20px; font-size: 22px; font-weight: 600"
+      class="input-data"
+      >Добавления поста</span
+    >
     <input
       formControlName="title"
       placeholder="Заголовок"
@@ -23,6 +27,7 @@
     <input
       (change)="fileChange($event)"
       class="form-control"
+      style="border: none; padding: 0"
       formControlName="file"
       type="file"
     />
@@ -31,7 +36,7 @@
       type="submit"
       class="btn btn-secondary add"
     >
-      Отпрвить
+      Добавить
     </button>
   </div>
 </form>

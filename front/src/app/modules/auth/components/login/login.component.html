@@ -1,6 +1,10 @@
 <div class="main-block">
   <form class="info" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <span class="info__header">Авторизация</span>
+    <span
+      class="info__header"
+      style="margin-bottom: 20px; font-size: 22px; font-weight: 600"
+      >Вход</span
+    >
     <input
       formControlName="email"
       type="text"
@@ -20,7 +24,9 @@
     >
       Войти
     </button>
-    <span class="error" *ngIf="errorMsg"> {{errorMsg}} </span>
-    <span class="success">{{successMsg}}</span>
+    <span style="margin-top: 20px" class="error" *ngIf="errorMsg">
+      {{ errorMsg }}
+    </span>
+    <span style="margin-top: 20px" class="success">{{ successMsg }}</span>
   </form>
 </div>

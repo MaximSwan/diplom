@@ -1,6 +1,10 @@
 <div class="main-block">
   <form class="info" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <span class="info__header">Регистрация</span>
+    <span
+      style="margin-bottom: 20px; font-size: 22px; font-weight: 600"
+      class="info__header"
+      >Регистрация</span
+    >
     <input
       formControlName="email"
       type="text"
@@ -12,6 +16,7 @@
       type="password"
       placeholder="password"
       class="form-control"
+      style="margin-bottom: 20px"
     />
     <button
       [disabled]="!registerForm.valid"
@@ -20,6 +25,8 @@
     >
       Зарегестрироваться
     </button>
-    <span class="error" *ngIf="errorMsg"> {{errorMsg}} </span>
+    <span style="margin-top: 20px" class="error" *ngIf="errorMsg">
+      {{ errorMsg }}
+    </span>
   </form>
 </div>

@@ -1,23 +1,23 @@
 .main-block {
+  display: flex;
+  justify-content: center;
+  .info {
+    width: 600px;
     display: flex;
+    margin-top: 50px;
     justify-content: center;
-    .info {
-      width: 600px;
-      display: flex;
-      margin-top: 50px;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .form-control {
-      margin: 20px;
-    }
+    align-items: center;
+    flex-direction: column;
   }
-  
-  .error {
-    color: red;
+  .form-control {
+    margin-bottom: 15px;
   }
-  
-  .success {
-      color: green;
-  }
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

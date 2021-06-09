@@ -50,6 +50,10 @@ const Articles = mongoose.model('Articles', {
   category: { type: String, ref: 'Category' },
 
   isRemoved: { type: Boolean, default: false },
+
+  likesCount: Number,
+
+  usersLikes: Array,
 });
 
 module.exports = { User, Category, Articles };

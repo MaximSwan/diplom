@@ -44,7 +44,7 @@ router.post('/add', isAuthenticated, async (req, res, next) => {
 router.post('/edit/:id/:userId/', isAuthenticated, async (req, res, next) => {
   try {
     const reg = /^[a-zA-Z\s]+$/;
-    const { title, descr, code, shortDescr, category } = req.body;
+    const { title, descr, code, shortDescr, category, like } = req.body;
     const { id, userId } = req.params;
 
     if (userId !== req.user.id) {
@@ -85,6 +85,10 @@ router.post('/edit/:id/:userId/', isAuthenticated, async (req, res, next) => {
         if (req.file) {
           art['mainImage'] = req.file.buffer;
         }
+        if (like) {
+          art.likesCount += 1;
+          art.usersLikes.push(req.user.id);
+        }
 
         const dbres = await art.save();
 
@@ -112,9 +116,6 @@ router.post('/remove/:id/:userId/', isAuthenticated, async (req, res, next) => {
         .status(400);
     }
     if (id) {
-      if (id.length !== 24) {
-        return res.send({ error: { msg: 'Не верный формат id' } });
-      }
       const art = await db.Articles.findOne({ _id: id });
 
       if (!art) {

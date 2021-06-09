@@ -1,0 +1,11 @@
+::ng-deep {
+  .navbar-nav {
+    justify-content: flex-end;
+  }
+  @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+      display: initial !important;
+      flex-basis: auto;
+    }
+  }
+}
